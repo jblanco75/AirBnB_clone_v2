@@ -8,13 +8,14 @@ from models.engine.db_storage import DBStorage
 from models import storage
 from unittest.case import skipIf
 
+
 @unittest.skipIf(
     os.getenv('HBNB_TYPE_STORAGE') != 'db',
     "skip if not database"
 )
 class test_dbstorage(unittest.TestCase):
     """class to test the db storage methode"""
-    
+
     def setUp(cls):
         """set up test env"""
         cls.user = User()
@@ -23,7 +24,7 @@ class test_dbstorage(unittest.TestCase):
         cls.user.password = "Titi"
         cls.user.email = "toto@mail.com"
         cls.storage = FileStorage()
-        
+
     def tearDown(self):
         """ Remove storage file at end of tests """
         try:
