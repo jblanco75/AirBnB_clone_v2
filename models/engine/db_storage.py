@@ -32,7 +32,8 @@ class DBStorage:
         }
         conn_format = '{dialect}+{driver}://{user}:{pass}@{host}:{port}/{db}'
 
-        self.__engine = create_engine(conn_format.format(**db_conn), pool_pre_ping=True)
+        self.__engine = create_engine(
+                conn_format.format(**db_conn), pool_pre_ping=True)
 
         if getenv("HBNB_ENV") == "test":
             Base.metadata.drop_all(self.__engine)
@@ -77,7 +78,8 @@ class DBStorage:
         """ Create all tables in the database """
         Base.metadata.create_all(self.__engine)
 
-        session_factory = sessionmaker(bind=self.__engine, expire_on_commit=False)
+        session_factory = sessionmaker(
+                bind=self.__engine, expire_on_commit=False)
         Session = scoped_session(session_factory)
 
         self.__session = Session()
