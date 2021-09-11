@@ -15,7 +15,7 @@ def index():
 @app.route('/hbnb', strict_slashes=False)
 def index_2():
     """Displays single line"""
-    return "HBNB!"
+    return "HBNB"
 
 
 @app.route('/c/<text>', strict_slashes=False)
