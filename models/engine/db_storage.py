@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Contains DBStorage class""" 
+"""Contains DBStorage class"""
 from models.base_model import BaseModel, Base
 from models.city import City
 from models.state import State
