@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-
+"""Contains DBStorage class""" 
 from models.base_model import BaseModel, Base
 from models.city import City
 from models.state import State
@@ -13,7 +13,7 @@ from os import getenv
 
 
 class DBStorage:
-    """  """
+    """DBStorage class"""
 
     __engine = None
     __session = None
