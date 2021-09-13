@@ -18,6 +18,7 @@ class State(BaseModel, Base):
         cities = relationship("City", backref="state", cascade="all")
 
     else:
+        @property
         def cities(self):
             """ Return the list of City instances with state_id """
             from models import storage
